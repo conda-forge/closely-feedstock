@@ -1,5 +1,5 @@
 {% set name = "closely" %}
-{% set version = "0.1.6" %}
+{% set version = "0.1.8" %}
 
 package:
   name: "{{ name|lower }}"
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/justinshenk/closest-pairs/archive/v{{ version }}.tar.gz
-  sha256: 608ec0008a3934b0db17f25429149a62c4e1971bd77ee9869cab0ed373f6cb51
+  sha256: e1a5eb7be13debc9dd9e3c560b1436dc856df3ba8b08592faa0428bee7fff707
 build:
   number: 0
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv "
