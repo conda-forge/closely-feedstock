@@ -9,20 +9,22 @@ source:
   url: https://github.com/justinshenk/closest-pairs/archive/v{{ version }}.tar.gz
   sha256: 608ec0008a3934b0db17f25429149a62c4e1971bd77ee9869cab0ed373f6cb51
 build:
-  number: 0
+  number: 1
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv "
   noarch: python
 
 requirements:
   host:
     - pip
-    - python >=3
+    - python {{ python_min }}
   run:
-    - python >=3
+    - python >={{ python_min }}
     - numpy
     - scikit-learn
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - closely
 
